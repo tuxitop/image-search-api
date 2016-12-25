@@ -4,7 +4,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Tuxitop URL shortner API', baseURL: req.get('host') });
+  res.render('index', { title: 'Tuxitop image search API', baseURL: req.get('host') });
 });
 
 module.exports = router;
