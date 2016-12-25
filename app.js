@@ -9,6 +9,11 @@ var api = require('./routes/api.js');
 
 var app = express();
 
+// load environment variables
+if (app.get('env') === 'development') {
+    require('dotenv').config();
+}
+
 mongoURI = process.env.MONGOLAB_URI || "mongodb://localhost/image-search-api";
 mongoose.connect(mongoURI);
 

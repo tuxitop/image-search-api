@@ -3,9 +3,9 @@ const express = require('express');
 const router = express.Router();
 const GoogleSearch = require('google-search');
 
-// load environment variables
-require('dotenv').config();
+const Search = require("../models/search");
 
+// the imagesearch api
 router.get("/imagesearch/:searchstr", (req, res, next) => {
     // Google only supports up to 100 search items. so let's check if the
     // offset is too much before running the query.
@@ -50,6 +50,35 @@ router.get("/imagesearch/:searchstr", (req, res, next) => {
                 context: result.image.contextLink
             });
         });
+
+        // Add the search to the history
+        let search = new Search({
+            term: req.params.searchstr,
+            when: new Date(),
+        })
+        search.save();
+        
+        res.send(results);
+    });
+});
+
+// the histroy API
+router.get("/latest/imagesearch", (req, res, next) => {
+    Search.find().sort( {when: -1} ).exec((err, searches) => {
+        if (err) {
+            return next(err);
+        }
+        
+        // Make the history json
+        let results = [];
+
+        searches.forEach((search) => {
+            results.push({
+                term: search.term,
+                when: search.when.toISOString()
+            });
+        });
+
         res.send(results);
     });
 });
