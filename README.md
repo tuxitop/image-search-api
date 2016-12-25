@@ -10,7 +10,7 @@ you can view the app on https://protected-shore-90458.herokuapp.com/
   list of images in the response. the response will be in JSON format and will
   contain 10 images.
 * You can pass an `offset` query with a numerical value, and you will recieve
-  the page that you asked in the view.
+  the results starting from that position.
 * You can view a history of the latest searches by visiting
   "/api/latest/imagesearch/"
 

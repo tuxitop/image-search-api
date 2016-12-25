@@ -5,10 +5,11 @@ var logger = require('morgan');
 const mongoose = require('mongoose');
 
 var index = require('./routes/index');
+var api = require('./routes/api.js');
 
 var app = express();
 
-mongoURI = process.env.MONGOLAB_URI || "mongodb://localhost/urlShortnerFCC";
+mongoURI = process.env.MONGOLAB_URI || "mongodb://localhost/image-search-api";
 mongoose.connect(mongoURI);
 
 // view engine setup
@@ -19,6 +20,7 @@ app.use(logger('dev'));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
+app.use("/api", api);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
