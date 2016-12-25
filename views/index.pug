@@ -1,0 +1,32 @@
+extends layout
+
+block content
+    h1= title
+    h2 Guide
+    div.purpose
+        ul
+            li.
+                You can pass a search term after "/api/imagesearch/" and you
+                will recieve a list of images in the response. The response
+                will be in JSON format and will contain 10 images.
+            li.
+                You can pass an offset query with a numerical value, and you
+                will recieve the page that you asked in the view.
+            li.
+                You can view a history of the latest searches by visiting
+                "/api/latest/imagesearch/"
+
+    h2 Example usage
+    p
+        code
+            a(href="/api/imagesearch/lolcats") #{baseURL}/api/imagesearch/lolcats
+    p
+        code
+            a(href="/api/imagesearch/lolcats?offset=10") #{baseURL}/api/imagesearch/lolcats?offset=10
+    p
+        code
+            a(href="/api/latest/imagesearch") #{baseURL}/api/latest/imagesearch
+    h2 More Information
+
+    p you can find more information and the source code of this website at 
+        a(href="https://github.com/tuxitop/image-search-api") github.

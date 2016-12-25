@@ -1,0 +1,45 @@
+{
+  "name": "image-search-api",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "test": "mocha",
+    "production": "forever ./bin/www",
+    "devel": "nodemon ./bin/www"
+  },
+  "dependencies": {
+    "debug": "~2.2.0",
+    "express": "~4.14.0",
+    "forever": "^0.15.3",
+    "mongoose": "^4.7.4",
+    "morgan": "~1.7.0",
+    "pug": "~2.0.0-beta6"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0",
+    "nodemon": "^1.11.0"
+  },
+  "description": "A simple image search api web application",
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tuxitop/image-search-api.git"
+  },
+  "keywords": [
+    "freecodecamp",
+    "api",
+    "search",
+    "image"
+  ],
+  "author": "Ali Mousavi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tuxitop/image-search-api/issues"
+  },
+  "homepage": "https://github.com/tuxitop/image-search-api#readme",
+  "engines": {
+    "node": "7.2.x"
+  }
+}

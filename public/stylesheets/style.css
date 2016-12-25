@@ -1,0 +1,18 @@
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  padding: 50px;
+}
+
+.purpose {
+    max-width: 700px;
+}
+
+code {
+    background-color: #ececec;
+    font-size: 14px;
+}
+
+a {
+  color: #000;
+}
