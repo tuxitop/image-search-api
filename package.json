@@ -43,6 +43,6 @@
   },
   "homepage": "https://github.com/tuxitop/image-search-api#readme",
   "engines": {
-    "node": "7.10.x"
+    "node": "12.10.x"
   }
 }
