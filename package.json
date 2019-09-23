@@ -1,28 +1,28 @@
 {
   "name": "image-search-api",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
     "test": "mocha",
-    "production": "forever ./bin/www",
+    "production": "pm2 start ./bin/www --no-daemon --no-vizion",
     "devel": "nodemon ./bin/www"
   },
   "dependencies": {
-    "debug": "~2.2.0",
-    "express": "~4.14.0",
-    "forever": "^0.15.3",
+    "debug": "^4.1.1",
+    "express": "^4.17.1",
     "google-search": "0.0.5",
-    "mongoose": "^4.7.4",
-    "morgan": "~1.7.0",
-    "pug": "~2.0.0-beta6"
+    "mongoose": "^5.7.1",
+    "morgan": "^1.9.1",
+    "pm2": "^3.5.1",
+    "pug": "^2.0.0-beta6"
   },
   "devDependencies": {
-    "chai": "^3.5.0",
-    "dotenv": "^2.0.0",
-    "mocha": "^3.2.0",
+    "chai": "^4.2.0",
+    "dotenv": "^8.0.0",
+    "mocha": "^6.2.0",
     "nodemon": "^1.11.0",
-    "supertest": "^2.0.1"
+    "supertest": "^4.0.2"
   },
   "description": "A simple image search api web application",
   "main": "app.js",
