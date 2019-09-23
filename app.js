@@ -11,10 +11,11 @@ var app = express();
 
 // load environment variables
 if (app.get('env') === 'development') {
-    require('dotenv').config();
+  require('dotenv').config();
 }
 
-mongoURI = process.env.MONGOLAB_URI || "mongodb://localhost/image-search-api";
+const mongoURI =
+  process.env.MONGOLAB_URI || 'mongodb://localhost/image-search-api';
 mongoose.connect(mongoURI);
 
 // view engine setup
@@ -25,7 +26,7 @@ app.use(logger('dev'));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
-app.use("/api", api);
+app.use('/api', api);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
