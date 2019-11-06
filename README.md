@@ -24,15 +24,17 @@ https://protected-shore-90458.herokuapp.com/api/latest/imagesearch
 
 ## Installation
 
-####Install and configure mongodb
+#### Install and configure mongodb
 
-####Clone the repo
+#### Clone the repo
 `git clone https://github.com/tuxitop/image-search-api.git`
 
 `cd image-search-api`
-####Install the dependecies
+
+#### Install the dependecies
 `npm install`
-####Run the app
+
+#### Run the app
 `npm start`
 
 you can view it by visiting [http://localhost:3000](http://localhost:3000) with a browser.
